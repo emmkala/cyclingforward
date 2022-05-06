@@ -1,31 +1,21 @@
-import React, { useState } from 'react';
+import TopNav from './components/TopNav'
+import Landing from './components/Landing'
+import LearnMore from './components/LearnMore'
+import Shop from './components/Shop'
+import Request from './components/Request'
+import Donate from './components/Donate'
+
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-    const [bikes, setBikes] = useState([])
-
-    /*const submitBike = async () => {
-        const hardCodedBike = {
-            type: "Road",
-            location: "Halifax",
-            costs: 0.00
-        }
-
-        const result = await fetch('api/Bikes', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(hardCodedBike)
-        })
-
-        const jsonRes = await result.json()
-        console.log(jsonRes)
-    }*/
-
     return (
-        <div className="db-test">
-            <button onClick={submitBike}>Add Bike</button>
-        </div>
+        <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/learnmore" element={<LearnMore />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/request" element={<Request />} />
+            <Route path='/donate' element={<Donate />} />
+        </Routes>
     )
 }
 
