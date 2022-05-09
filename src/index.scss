@@ -42,7 +42,7 @@ $bone: #dfdcce;
 $beaver: #ad8c72;
 $deep-space: #406261;
 $dark-slate: #325046;
-$black-choco: 211d16;
+$black-choco: #211d16;
 
 h1, h2, h3 {
     font-family: Raleway-Bold;
@@ -52,8 +52,12 @@ h4, h5, h6, p {
     font-family: Raleway-Medium;
 }
 
-button {
-    font-family: Raleway-Regular;
+button, .btn {
+    font-family: Raleway-Medium;
+    font-size: 14px;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 7px 50px;
 }
 
 a {
@@ -65,35 +69,53 @@ body {
     margin: 0;
     background-color: white;
     position: static;
+
+    .italic-heading {
+        font-family: Raleway-Italic;
+    }
 }
 
 .nav-bar {
-    height: 8vh;
-    width: 97%;
-    padding: 0 10px;
-    background-color: transparent;
+    width: 100%;
+    padding: 10px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
     position: fixed;
+    transition: background-color 0.5s ease;
+
+    &.top-nav {
+        background-color: transparent;
+    }
+
+    &.full-nav {
+        background-color: $deep-space;
+    }
 
     .right-nav {
         display: flex;
         align-items: center;
 
         .nav-link {
-            margin: 0 35px;
+            padding: 0 50px;
 
             &.nav-btn {
                 padding: 4px 30px;
-                margin-right: 0;
+                margin-right: 10px;
                 border: thin solid white;
                 border-radius: 25px;
+
+                &:hover {
+                    background-color: white;
+                    color: $black-choco;
+                }
             }
 
             &.inactive {
                 color: #878787;
+                pointer-events: none;
+                cursor: default;
             }
         }
     }
@@ -110,15 +132,26 @@ body {
 }
 
 .landing {
-    .landing-1 {
-        width: 100%;
-        height: 100vh;
-        position: absolute;
+    position: absolute;
 
+    .landing-sect {
+        height: 100vh;
+
+        &:not(.landing-back) {
+            padding: 5% 10%;
+        }
+    }
+
+    .sub-heading {
+        font-size: 1.1rem;
+    }
+
+    .landing-1 {
         .landing-background {
             width: 100%;
             height: 100vh;
             position: absolute;
+            top: 0;
         }
 
         .landing-info {
@@ -129,9 +162,75 @@ body {
             align-items: center;
 
             .logo-animation {
-                /* Adjust size so it fits */
                 width: 800px;
                 filter: invert(1);
+            }
+        }
+
+        .btns {
+            display: flex;
+
+            .btn-filled {
+                margin-right: 8px;
+                background-color: $deep-space;
+                border-color: #355554;
+                color: white;
+
+                &:hover {
+                    background-color: #355554;
+                }
+            }
+
+            .btn-outline {
+                margin-left: 8px;
+                border-color: $powder-blue;
+                color: $powder-blue;
+
+                &:hover {
+                    background-color: $powder-blue;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .landing-2 {
+        .content {
+            max-height: 100%;
+            align-items: center;
+
+            .gallery-container {
+                .gallery-imgs {
+                    max-width: 77%;
+                }
+            }
+
+            .text-container {
+                .circle-img {
+                    max-width: 85%;
+                    position: absolute;
+                    top: -25px;
+                }
+
+                .info {
+                    position: relative;
+                    z-index: 10;
+
+                    @media (max-width: 1080px) {
+                        font-size: 0.8rem;
+                    }
+
+                    .btn-filled {
+                        margin-right: 8px;
+                        background-color: $deep-space;
+                        border-color: #355554;
+                        color: white;
+
+                        &:hover {
+                            background-color: #355554;
+                        }
+                    }
+                }
             }
         }
     }
