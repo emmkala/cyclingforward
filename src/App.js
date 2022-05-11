@@ -1,4 +1,3 @@
-import TopNav from './components/TopNav'
 import Landing from './components/Landing'
 import LearnMore from './components/LearnMore'
 import Shop from './components/Shop'
