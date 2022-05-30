@@ -6,11 +6,21 @@ import backgroundImg from '../images/FooterBackground.png'
 function Footer() {
     const [email, setEmail] = useState("");
 
-    const submitEmail = (evt) => {
-
+    const submitEmail = (e) => {
+        e.preventDefault();
+        const userEmail = { "contactInfo": email };
+        testSendEmail(userEmail);
     }
 
-    const backgroundimg = <img className="footer-background" src={backgroundImg} alt="background" />
+    const testSendEmail = async (userEmail) => {
+        await fetch('/api/Home', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(userEmail)
+        }).then(() => {
+            console.log('contact info added (maybe)');
+        })
+    }
 
     return (
         <div className="footer">

@@ -14,6 +14,7 @@ function App() {
             <Route path="/shop" element={<Shop />} />
             <Route path="/request" element={<Request />} />
             <Route path='/donate' element={<Donate />} />
+            <Route path="/api/Home" />
         </Routes>
     )
 }
