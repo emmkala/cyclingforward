@@ -81,6 +81,23 @@ body {
     div:not(.carousel) {
         overflow: unset !important;
     }
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #e8e8e8;
+        border-radius: 10px;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #d4d4d4;
+    }
 }
 
 .nav-bar {
@@ -617,6 +634,8 @@ body {
             &:not(.confirmation-card) {
                 padding: 3%;
                 align-items: center;
+                max-height: 70vh;
+                overflow-y: scroll !important;
             }
         }
 
@@ -697,6 +716,10 @@ body {
                 border: 2px solid white;
             }
         }
+    }
+
+    .request-info {
+        padding-top: 2%;
     }
 
     .confirmation-card {

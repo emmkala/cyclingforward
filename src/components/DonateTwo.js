@@ -3,9 +3,6 @@ import BikeInput from './BikeInput'
 
 import { useState, useCallback } from 'react'
 
-import toolbox from '../images/ToolBox.png'
-import donateBike from '../images/FixedBike.png'
-
 const initialList = {
     "id": "0",
     "type": "",
@@ -80,7 +77,7 @@ function DonateTwo() {
             body: JSON.stringify(donationInfo)
         }).then(() => {
             window.location.href = '/confirmation/donation'
-        })
+        }).catch(e => console.log(e))
     }
 
     return (
