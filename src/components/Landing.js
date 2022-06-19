@@ -26,7 +26,7 @@ function Landing() {
     var landingSections = [Section1(), Section2(), Section3(), Section4(), Section5(), Section6()]
     return (
         <div className="landing">
-            <TopNav />
+            <TopNav navtype='changing-nav'/>
             {landingSections}
             <Footer />
         </div>

@@ -93,11 +93,11 @@ body {
     position: fixed;
     transition: background-color 0.5s ease;
 
-    &.top-nav {
+    &.changing-nav {
         background-color: transparent;
     }
 
-    &.full-nav {
+    &.solid-nav {
         background-color: #355554;
     }
 
@@ -564,5 +564,160 @@ body {
                 }
             }
         }
+    }
+}
+
+.bike-form-container {
+    .nav-bar {
+        position: relative;
+    }
+
+    .submit-btn {
+        margin-top: 10px;
+        width: 100%;
+        color: white;
+        font-weight: 400;
+        background-color: #abc9c6;
+
+        &:hover {
+            background-color: #a1bfbc;
+        }
+    }
+
+    .add-bike-btn {
+        background-color: transparent;
+        padding-left: 0;
+        font-size: 1rem;
+
+        i {
+            color: $deep-space;
+        }
+    }
+
+    .bike-form {
+        padding: 4% 15%;
+        text-align: center;
+        position: absolute;
+        z-index: 100;
+
+        .form-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .form-content {
+            font-size: 0.9rem;
+        }
+
+        .form-card {
+            border-color: transparent;
+            border-radius: 15px;
+            box-shadow: rgba(86,86,86,0.14) -4px 5px 18px 1px;
+
+            &:not(.confirmation-card) {
+                padding: 3%;
+                align-items: center;
+            }
+        }
+
+        .donate-card {
+            transition: background-color 0.5s ease;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #f7f7f7;
+            }
+
+            .donate-img {
+                width: 45%;
+            }
+
+            .card-text {
+                font-size: 0.75rem;
+            }
+        }
+
+        .donate-form {
+            text-align: left;
+
+            .text-input {
+                width: 100%;
+                margin-bottom: 20px;
+                border: none;
+                border-bottom: thin solid #d9d9d9;
+            }
+
+            .bike-input {
+                padding-bottom: 15px;
+
+                &:not(#first) {
+                    padding-top: 15px;
+                    border-top: thin dashed $deep-space;
+                }
+            }
+        }
+
+        .donate-form-container {
+            width: 100%;
+
+            .radio-input {
+                margin-left: 5px;
+            }
+
+            .radio-label {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            input[type='radio']:after {
+                width: 20px;
+                height: 20px;
+                border-radius: 15px;
+                top: -3px;
+                left: -1px;
+                position: relative;
+                background-color: #d1d3d1;
+                content: '';
+                display: inline-block;
+                visibility: visible;
+                border: 2px solid white;
+            }
+
+            input[type='radio']:checked:after {
+                width: 20px;
+                height: 20px;
+                border-radius: 15px;
+                top: -3px;
+                left: -1px;
+                position: relative;
+                background-color: #abc9c6;
+                content: '';
+                display: inline-block;
+                visibility: visible;
+                border: 2px solid white;
+            }
+        }
+    }
+
+    .confirmation-card {
+        text-align: left;
+
+        .confirmation-img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+
+        .confirmation-text-cont {
+            padding: 3%;
+            line-height: 1.65rem;
+        }
+    }
+
+    .background-rect {
+        position: fixed;
+        height: 95%;
+        width: 100%;
+        background: linear-gradient(180deg, white 50%, #D5EBED 50%);
     }
 }

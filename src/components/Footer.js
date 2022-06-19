@@ -8,12 +8,12 @@ function Footer() {
 
     const submitEmail = (e) => {
         e.preventDefault();
-        const userEmail = { "contactInfo": email };
+        const userEmail = { "id": "", "contactInfo": email };
         testSendEmail(userEmail);
     }
 
     const testSendEmail = async (userEmail) => {
-        await fetch('/api/Home', {
+        await fetch('/api/Contact', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(userEmail)
@@ -43,7 +43,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className="footer-info-right col-6">
-                    <Link className="small-links" to="/donation"><small>Donate</small></Link>
+                    <Link className="small-links" to="/donate"><small>Donate</small></Link>
                     <Link className="small-links" to="/request"><small>Request</small></Link>
                     <Link className="small-links" to="/shop"><small>Shop</small></Link>
                     <Link className="small-links" to="/learnmore"><small>Learn More</small></Link>

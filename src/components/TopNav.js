@@ -3,15 +3,20 @@ import { useState, useEffect } from 'react'
 
 import navLogo from '../images/FinalLogo_White.png'
 
-function TopNav() {
-    const [navStyle, setNavStyle] = useState("top-nav")
+function TopNav(props) {
+    const [navStyle, setNavStyle] = useState(props.navtype)
 
+    if (navStyle == "changing-nav") {
+
+    }
     const listenScrollEvent = (event) => {
-        if (window.scrollY < 73) {
-            return setNavStyle("top-nav")
-        } else if (window.scrollY > 70) {
-            return setNavStyle("full-nav")
-        }
+        if (navStyle == "changing-nav") {
+            if (window.scrollY < 73) {
+                return setNavStyle("changing-nav")
+            } else if (window.scrollY > 70) {
+                return setNavStyle("solid-nav")
+            }
+        }   
     }
 
     useEffect(() => {
