@@ -35,7 +35,7 @@ function TopNav(props) {
                 </NavLink>
             </div>
             <div className="right-nav">
-                <NavLink to="/learnmore" className="nav-link" id="nav-login">Learn More</NavLink>
+                <NavLink to="/resources" className="nav-link" id="nav-login">Resources</NavLink>
                 <NavLink to="/shop" className="nav-link inactive">Shop</NavLink>
                 <NavLink to="/request" className="nav-link">Request</NavLink>
                 <NavLink to="/donate" className="nav-link btn nav-btn">Donate</NavLink>
